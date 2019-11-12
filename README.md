@@ -12,23 +12,24 @@ Functions in library
 	
 	
 Whenever you do a request for the departure times, you basically get an array of strings like these:
+
 		{
-          "time": "20:43",
-          "destinationName": "S Hertogenbosch",
-          "viaNames": null,
-          "mode": {
-            "type": "train",
-            "name": "Sprinter"
-          },
-          "operatorName": "NS",
-          "service": null,
-          "platform": "1",
-          "platformChanged": false,
-          "remark": null,
-          "realtimeState": "ontime",
-          "realtimeText": null
-        },
-		
+		  "time": "20:43",
+		  "destinationName": "S Hertogenbosch",
+		  "viaNames": null,
+		  "mode": {
+		    "type": "train",
+		    "name": "Sprinter"
+		  },
+		  "operatorName": "NS",
+		  "service": null,
+		  "platform": "1",
+		  "platformChanged": false,
+		  "remark": null,
+		  "realtimeState": "ontime",
+		  "realtimeText": null
+		},
+
 Note that not all variables are available in the _9292GetDepartureInfo function (yet)! 
 Allthough you can all all functions with their corresponding numbers, the variables with an ! will not always give sensible information!
 
