@@ -4,9 +4,9 @@ Arduino library for easily fetching data from the 9292 (Dutch public transport) 
 
 Functions in library
 
->_9292GetData: returns a string fetched from the url given with the function
->_9292GetInfo: returns a string containing the information you specified in what you gave with it while calling the function
->getTime: returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". 		Neccesary for the journey function (not yet implemented)
+_9292GetData: returns a string fetched from the url given with the function
+_9292GetInfo: returns a string containing the information you specified in what you gave with it while calling the function
+getTime: returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for the journey function (not yet implemented)
 	
 	
 Whenever you do a request for the departure times, you basically get an array of strings like these:
