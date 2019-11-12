@@ -6,7 +6,7 @@ Functions in library
 
 <b>_9292GetData: </b> returns a string fetched from the url given with the function.
 
-<b>_9292GetInfo: </b> returns a string containing the information you specified in what you gave with it while calling the function.
+<b>_9292GetDepartureInfo: </b> returns a string containing the information you specified in what you gave with it while calling the function.
 
 <b>getTime: </b> returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for the journey function (not yet implemented).
 	
