@@ -47,3 +47,6 @@ Functions in library
 		!remark = 9
 		realtimeState = 10
 		!realtimeText = 11
+		
+Note that the library is still quiet messy. It will be updated and improved soon.
+		
