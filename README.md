@@ -35,19 +35,32 @@ Allthough you can all all functions with their corresponding numbers, the variab
 This function expects the input data in a string, and next the datatype (e.g. time, destinationName etc) in an integer, 
 and finally the listPosition (first coming train, or 5 trains ahead?) in an integer . It then returns a string with the data you asked for.
 		
-REFERENCE LIST:
+REFERENCE LIST: 
+
 		time = 0
+		
 		destinationName = 1
+		
 		!viaNames = 2
+		
 		type = 3
+		
 		name = 4
+		
 		operatorName = 5
+		
 		!service = 6
+		
 		platform = 7
+		
 		!platformChanged = 8
+		
 		!remark = 9
+		
 		realtimeState = 10
+		
 		!realtimeText = 11
 		
-Note that the library is still quiet messy. It will be updated and improved soon.
+		
+The library is still quiet messy. It will be updated and improved soon.
 		
