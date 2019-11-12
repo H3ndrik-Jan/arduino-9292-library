@@ -1,17 +1,15 @@
 # arduino-9292-library
 Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller.
 
-REFERENCE LIST
-
 
 Functions in library
 
-	_9292GetData: returns a string fetched from the url given with the function
-	_9292GetInfo: returns a string containing the information you specified in what you gave with it while calling the function
-	getTime: returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for the journey function (not yet implemented)
+>_9292GetData: returns a string fetched from the url given with the function
+>_9292GetInfo: returns a string containing the information you specified in what you gave with it while calling the function
+>getTime: returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". 		Neccesary for the journey function (not yet implemented)
 	
 	
-	Whenever you do a request for the departure times, you basically get an array of strings like these:
+Whenever you do a request for the departure times, you basically get an array of strings like these:
 		{
           "time": "20:43",
           "destinationName": "S Hertogenbosch",
@@ -29,12 +27,13 @@ Functions in library
           "realtimeText": null
         },
 		
-		Note that not all variables are available in the _9292GetDepartureInfo function (yet)! 
-		Allthough you can all all functions with their corresponding numbers, the variables with an ! will not always give sensible information!
+Note that not all variables are available in the _9292GetDepartureInfo function (yet)! 
+Allthough you can all all functions with their corresponding numbers, the variables with an ! will not always give sensible information!
 
-		This function expects the input data in a string, and next the datatype (e.g. time, destinationName etc) in an integer, 
-		and finally the listPosition (first coming train, or 5 trains ahead?) in an integer . It then returns a string with the data you asked for.
+This function expects the input data in a string, and next the datatype (e.g. time, destinationName etc) in an integer, 
+and finally the listPosition (first coming train, or 5 trains ahead?) in an integer . It then returns a string with the data you asked for.
 		
+REFERENCE LIST:
 		time = 0
 		destinationName = 1
 		!viaNames = 2
