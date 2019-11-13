@@ -1,6 +1,7 @@
 # arduino-9292-library
 Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller.
 
+I only knew about the 9292 API URLs because these were reverse-engineered and documented by a couple of people on github already. I used the following specification lists as a reference: https://github.com/oleander/9292-nl-api-spec , https://github.com/aitorvs/9292-api-spec
 
 Functions in library
 
@@ -8,7 +9,7 @@ Functions in library
 
 <b>_9292GetDepartureInfo: </b> returns a string containing the information you specified in what you gave with it while calling the function.
 
-<b>getTime: </b> returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for the journey function (not yet implemented).
+<b>getTime: </b> returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for when you want to get information about a journey.
 	
 	
 Whenever you do a request for the departure times, you basically get an array of strings like these:
