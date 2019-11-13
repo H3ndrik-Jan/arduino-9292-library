@@ -1,6 +1,14 @@
 
 #include "arduino_9292.h"
 
+#include "Arduino.h"
+
+
+//#include "WiFi.h"
+HTTPClient http;
+
+WiFiClient client;
+
 String getTime(void)
 {
   String payload;
@@ -32,7 +40,7 @@ int lijstpositie(String payload, int listPosition, String searchWord)
   return lookPos;
 }
 
-String _9292GetInfo(String payload, int dataType, int listPosition)
+String _9292GetDepartureInfo(String payload, int dataType, int listPosition)
 {
   int lookPos;        //position of the individual char in the string it should look for the data
   int offset;         //offset from the lookPos to the actual data
@@ -44,7 +52,7 @@ String _9292GetInfo(String payload, int dataType, int listPosition)
     case 1: searchWord = "destinationName"; offset = 19; break;
     case 2: searchWord = "viaNames"; offset = 12; break;
     case 3: searchWord = "type";  offset = 8; break;
-    case 4: searchWord = "name";  offset = 8; break;
+    case 4: searchWord = "\"name";  offset = 9; listPosition+=5; break;
     case 5: searchWord = "operatorName";  offset = 16; break;
     case 6: searchWord = "service"; offset = 11; break;
     case 7: searchWord = "platform\""; offset = 12; break;
@@ -52,6 +60,7 @@ String _9292GetInfo(String payload, int dataType, int listPosition)
     case 9: searchWord = "remark";  offset = 10; break;
     case 10: searchWord = "realtimeState";  offset = 17; break;
     case 11: searchWord = "realtimeText";  offset = 16; break;
+	case 12: searchWord = "\"departure"; offset = 14; break;		//journey
   }
   
   lookPos = lijstpositie(payload, listPosition, searchWord);
