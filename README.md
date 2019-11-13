@@ -63,5 +63,5 @@ REFERENCE LIST:
 		!realtimeText = 11
 		
 		
-The library is still quiet messy. It will be updated and improved soon.
+The library is still quiet messy and only contains a function to check departure times from a station. It will be updated and improved soon.
 		
