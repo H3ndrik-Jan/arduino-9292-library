@@ -23,7 +23,6 @@ String getTime(int dataType)
 	case 1:
 	timeAndDate = payload.substring((untilDate + 1) , (untilDate + 6));
 	break;
-	
   }
   return timeAndDate;
 }
