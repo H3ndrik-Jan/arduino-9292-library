@@ -1,10 +1,10 @@
 # arduino-9292-library
 Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller (ESP32).
-It basically fetches the data and then parses specified variables into strings with which you can do whatever you want.
+It basically fetches the data and then parses specified variables into strings with which you can do whatever you want. There are two examples for the library. One of them is made to display data onto a 2004 LCD display, and the other example displays onto an OLED-display.
 
 I only knew about the 9292 API URLs because these were reverse-engineered and documented by a couple of people on github already. I used the following specification lists as a reference: https://github.com/oleander/9292-nl-api-spec , https://github.com/aitorvs/9292-api-spec
 
-Functions in library
+Functions in library:
 
 <b>_9292GetData: </b> returns a string fetched from the url given with the function.
 
