@@ -8,9 +8,11 @@ Functions in library
 
 <b>_9292GetData: </b> returns a string fetched from the url given with the function.
 
-<b>_9292GetDepartureInfo: </b> returns a string containing the information you specified in what you gave with it while calling the function.
+<b>_9292GetDepartureInfo: </b> returns a string containing the information you specified in what you gave with it while calling the function. The name is not really suitable as you can actually get some more variables from the function (see reference list below).
 
-<b>getTime: </b> returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam". Neccesary for when you want to get information about a journey.
+<b>getTime: </b> returns a string with the time and date, fetched from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam" when 'dataType' = 0. Only returns time when 'dataType' = 1.
+
+<b>makeURL: </b> returns a URL to put directly into the GetData-function to get journey-information. 
 	
 	
 Whenever you do a request for the departure times, you basically get an array of strings like these:
