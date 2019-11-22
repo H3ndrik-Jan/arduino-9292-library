@@ -32,7 +32,7 @@ int lijstpositie(String payload, int listPosition, String searchWord)
   int lookPos = 0;
   for(int i=0; i < (listPosition+1); i++)
   {
-    lookPos = payload.indexOf(searchWord, lookPos+1); /*, (lookPos + listPosition));*/
+    lookPos = payload.indexOf(searchWord, lookPos+1);
   }
   return lookPos;
 }
@@ -82,7 +82,6 @@ String _9292GetData(String url)
       payload = http.getString(); 
     }
 	  else{
-		 // payload = "Error!";
 		  Serial.println("HTTPCode" + httpCode);
 		  Serial.println("Forcing getString");
 		  delay(1000);
