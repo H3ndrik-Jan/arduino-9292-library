@@ -1,5 +1,5 @@
 # arduino-9292-library
-Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller (ESP32).
+Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller (ESP32 or ESP8266).
 It basically fetches the data and then parses specified variables into strings with which you can do whatever you want. There are two examples for the library. One of them is made to display data onto a 2004 LCD display, and the other example displays onto an OLED-display.
 
 I only knew about the 9292 API URLs because these were reverse-engineered and documented by a couple of people on github already. I used the following specification lists as a reference: https://github.com/oleander/9292-nl-api-spec , https://github.com/aitorvs/9292-api-spec
@@ -66,4 +66,7 @@ REFERENCE LIST:
 		
 		!realtimeText = 11
 		
+		
+The library works with the ESP32 reliably, but also works on the ESP8266, allthough for this to work the ESP8266HTTPClient-library needs to be included into the .h-file instead of the HTTPClient-library which is needed for the ESP32. Additionally, in the arduino sketch, ESP8266WiFi.h should be included instead of WiFi.h.
+
 The library will be updated and improved soon.
