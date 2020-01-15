@@ -1,9 +1,10 @@
 /*
  * 9292departureTimes.ino
- * Date: 12-11-2019
+ * Date: 12-11-2019, changed 15-1-2020
  * made by H3ndrik-Jan
  * 
- * Example for the arduino_9292 library. This example is made to run on an ESP32 dev module. 
+ * Example for the arduino_9292 library. This example is tested on the ESP32 dev module and Generic ESP8266 module,
+ * but should work on almost any board using this microcontroller. 
  * It prints some details about the first 3 coming trains on a 128x62 OLED display.
  * When another button is pressed, it also gives the departure time for 2 specified journeys.
  * Change the variables to your needs.
@@ -15,18 +16,21 @@
 #include <U8g2lib.h>
 #include <U8x8lib.h>
 #include <arduino_9292.h>
-#include <WiFi.h>
 #include <WiFiClient.h>
-#include <HTTPClient.h>
-
-void ISRupdate();
-void ISRjourney();
+  #if defined(ESP32)
+  #include <WiFi.h> 
+  #elif defined(ESP8266)
+  #include <ESP8266WiFi.h> 
+  #endif
 
 U8G2_SH1106_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
 /////////////////////////////////////////////////////////////////////////////////
 //CONFIGURATION:
 /////////////////////////////////////////////////////////////////////////////////
+void  ISRupdate();   //ESP8266: void ICACHE_RAM_ATTR ISRupdate();
+void  ISRjourney();  //ESP8266: void ICACHE_RAM_ATTR ISRjourney();
+
 String stationId = "station-utrecht-centraal";  //Station you will see departuretimes from. Also the journeys will depart from this station.
 String stationId2 = "station-amsterdam-centraal";
 String stationId3 = "station-rotterdam-centraal";
@@ -34,8 +38,8 @@ String stationId3 = "station-rotterdam-centraal";
 char ssid[] = "XXXX";     // your WiFi-network SSID
 char password[] = "XXXX"; // your WiFi-network password
 
-int buttonPin = 23;   //button for updating the departure-times info
-int button2Pin = 35;  //button for showing journey departure-times
+int buttonPin = 12;   //button for updating the departure-times info
+int button2Pin = 14;  //button for showing journey departure-times
 //////////////////////////////////////////////////////////////////////////////////
 
 int timeSinceLastUpdate = 0;
@@ -43,8 +47,6 @@ int trainlist = 0;
 String URL1 = "http://api.9292.nl/0.1/locations/" + stationId + "/departure-times?lang=nl-NL";
 bool getmegastring = false;
 bool bupdateTime = true;
-
-extern HTTPClient http;
 
 void setup() {
   Serial.begin(115200);
