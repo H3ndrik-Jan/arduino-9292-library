@@ -67,6 +67,6 @@ REFERENCE LIST:
 		!realtimeText = 11
 		
 		
-The library works with the ESP32 reliably, but also works on the ESP8266, allthough for this to work the ESP8266HTTPClient-library needs to be included into the .h-file instead of the HTTPClient-library which is needed for the ESP32. Additionally, in the arduino sketch, ESP8266WiFi.h should be included instead of WiFi.h.
+The library works with both the ESP32 and the ESP8266, so does the u8g2 example.
 
 The library will be updated and improved soon.
