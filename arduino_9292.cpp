@@ -27,16 +27,6 @@ String getTime(int dataType)
   return timeAndDate;
 }
 
-int lijstpositie(String payload, int listPosition, String searchWord)
-{
-  int lookPos = 0;
-  for(int i=0; i < (listPosition+1); i++)
-  {
-    lookPos = payload.indexOf(searchWord, lookPos+1);
-  }
-  return lookPos;
-}
-
 String _9292GetDepartureInfo(String payload, int dataType, int listPosition)
 {
   int lookPos = 0;        //position of the individual char in the string it should look for the data
@@ -60,7 +50,10 @@ String _9292GetDepartureInfo(String payload, int dataType, int listPosition)
 	case 12: searchWord = "\"departure"; offset = 14; break;		//journey
   }
   
-  lookPos = lijstpositie(payload, listPosition, searchWord);
+  for(int i=0; i < (listPosition+1); i++)
+  {
+    lookPos = payload.indexOf(searchWord, lookPos+1);
+  }
   int until = payload.indexOf("\"", lookPos + offset);
   String stringpart = payload.substring((lookPos + offset), until);
   Serial.println(stringpart);

@@ -1,12 +1,16 @@
 
-
 #ifndef arduino_9292_h
 #define arduino_9292_h
 
+#if defined(ESP32)
+#include "HTTPClient.h"
+#elif defined(ESP8266)
+#include "ESP8266HTTPClient.h"
+#endif
+
 #include "WiFiClient.h"
 #include "arduino.h"
-#include "HTTPClient.h"
-//HTTPClient http;
+
 
 //fetches the Dutch time from "http://worldtimeapi.org/api/timezone/Europe/Amsterdam", 
 //and parses it into a format (date+time) that can be directly inserted into a 9292API URL when a 0 is given as dataType (format 'YYYY-MM-DDThhmm').
