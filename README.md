@@ -1,10 +1,12 @@
+![Pin Functions](Reisplanner.jpg)
+
 # arduino-9292-library
 Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller (ESP32 or ESP8266).
 It basically fetches the data and then parses specified variables into strings with which you can do whatever you want. There are two examples for the library. One of them is made to display data onto a 2004 LCD display, and the other example displays onto an OLED-display.
 
 I only knew about the 9292 API URLs because these were reverse-engineered and documented by a couple of people on github already. I used the following specification lists as a reference: https://github.com/oleander/9292-nl-api-spec , https://github.com/aitorvs/9292-api-spec
 
-Functions in library:
+### Functions in library:
 
 <b>_9292GetData: </b> returns a string fetched from the url given with the function.
 
@@ -40,7 +42,7 @@ Allthough you can all all functions with their corresponding numbers, the variab
 This function expects the input data in a string, and next the datatype (e.g. time, destinationName etc) in an integer, 
 and finally the listPosition (first coming train, or 5 trains ahead?) in an integer . It then returns a string with the data you asked for.
 		
-REFERENCE LIST: 
+### REFERENCE LIST: 
 
 		time = 0
 		
@@ -67,6 +69,6 @@ REFERENCE LIST:
 		!realtimeText = 11
 		
 		
-The library works with both the ESP32 and the ESP8266, so does the u8g2 example.
+#### The library works with both the ESP32 and the ESP8266, so does the u8g2 example.
 
 The library will be updated and improved soon.
