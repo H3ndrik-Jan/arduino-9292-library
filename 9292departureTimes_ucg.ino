@@ -30,7 +30,9 @@
 /////////////////////////////////////////////////////////////////////////////////
 void  ISRupdate();   //ESP8266: void ICACHE_RAM_ATTR ISRupdate();
 
-String stationId = "station-utrecht-centraal";  //Station you will see departuretimes from. Format: "station-xxxx-xxxx-...". You can check if the stationId is right by making a request using your favorite web-browser on your favorite device
+String stationId = "station-utrecht-centraal";  //Station you will see departuretimes from. Format: "station-xxxx-xxxx-...". 
+                                                //You can check if the stationId is right by making a request using your 
+                                                //favorite web-browser on your favorite device
 
 char ssid[] = "xxxx";     // your WiFi-network SSID
 char password[] = "xxxx"; // your WiFi-network password
