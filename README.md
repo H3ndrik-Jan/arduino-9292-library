@@ -1,6 +1,6 @@
-![Pin Functions](Reisplanner.jpg)
-
 # arduino-9292-library
+![Pin Functions](tft.jpg)
+
 Arduino library for easily fetching data from the 9292 (Dutch public transport) API to an arduino-compatible microcontroller (ESP32 or ESP8266).
 It basically fetches the data and then parses specified variables into strings with which you can do whatever you want. There are two examples for the library. One of them is made to display data onto a 2004 LCD display, and the other example displays onto an OLED-display.
 
@@ -70,5 +70,6 @@ and finally the listPosition (first coming train, or 5 trains ahead?) in an inte
 		
 		
 #### The library works with both the ESP32 and the ESP8266, so does the u8g2 example.
+![Pin Functions](Reisplanner.jpg)
 
 The library will be updated and improved soon.
